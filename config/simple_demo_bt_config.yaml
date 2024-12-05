@@ -1,0 +1,4 @@
+bt_executer:
+  plugins:  ["trajectory_loader_plugin", "move_to_plugin", "move_to_conf_plugin", "wait_plugin"]
+  bt_package: "holden_demo"
+  bt_name: "simple_demo_tree.xml"

@@ -1,0 +1,109 @@
+# This Python file uses the following encoding: utf-8
+from launch import LaunchDescription
+from launch.actions import ExecuteProcess, TimerAction, SetEnvironmentVariable
+from launch.substitutions import FindExecutable, PathJoinSubstitution
+from launch_ros.actions import Node
+from launch_ros.substitutions import FindPackageShare
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+
+def generate_launch_description():
+  config_folder = PathJoinSubstitution([FindPackageShare("holden_demo"),"config"])
+
+  return LaunchDescription([
+
+    SetEnvironmentVariable(name="IK_SOLVER_LOGGER_CONFIG_PATH", value=PathJoinSubstitution([config_folder,"logger_param.yaml"])),
+
+    ExecuteProcess(
+        cmd = [
+          FindExecutable(name="cnr_param_server"),
+          "--path-to-file",
+          PathJoinSubstitution([
+            config_folder,
+            "simple_demo_bt_config.yaml"        # load the behavior tree plugins and the tree
+          ]),
+          "--path-to-file",
+          PathJoinSubstitution([
+            config_folder,
+            "simple_demo_skills_config.yaml"    # load the parameters of each skill plugin
+          ])
+        ],
+        shell=False
+      ),
+
+    # Poses to reach  
+    TimerAction(
+      period=0.0,  # delay in seconds
+      actions=[
+         Node(
+           package="tf2_ros",
+           executable="static_transform_publisher",
+           name="pick_pose_broadcaster",
+           arguments=["-0.126", "-0.390", "0.221", "0.918", "-0.021", "-0.021", "0.395","world","pick_pose"],
+           output="screen")
+      ]
+    ),
+
+    TimerAction(
+      period=0.0,  # delay in seconds
+      actions=[
+         Node(
+           package="tf2_ros",
+           executable="static_transform_publisher",
+           name="place_pose_broadcaster",
+           arguments=["0.476", "-0.439", "0.397", "0.980", "0.126", "-0.020", "0.151","world","place_pose"],
+           output="screen")
+      ]
+    ),
+
+    # IK solver
+    TimerAction(
+      period=1.0,  # delay in seconds
+      actions=[
+      IncludeLaunchDescription(
+        launch_description_source=PythonLaunchDescriptionSource(
+          PathJoinSubstitution([FindPackageShare('ik_solver'),"launch","ik_solver.launch.py"])),
+          launch_arguments={'config': PathJoinSubstitution([config_folder,"ik_solver_config.yaml"])}.items()
+         )
+      ]
+    ),
+
+    #Move to and sleep server node
+    TimerAction(
+      period=1.0,  # delay in seconds
+      actions=[
+         Node(
+          package="trajectory_loader",
+          executable="move_to_server",
+          output="screen",
+          namespace="",
+          ros_arguments=["--log-level", "info"]
+         ),
+        Node(
+          package="trajectory_loader",
+          executable="move_to_conf_server",
+          output="screen",
+          namespace="",
+          ros_arguments=["--log-level", "info"]
+         ),
+        Node(
+          package="btcpp_ros2_samples",
+          executable="sleep_server"
+        )
+      ]
+    ),
+
+    #Bt executer
+    TimerAction(
+      period=1.0,  # delay in seconds
+      actions=[
+        Node(
+          package="bt_executer",
+          executable="bt_executer_node",
+          output="screen",
+          namespace="bt_executer",
+          ros_arguments=["--log-level", "info"]
+        )
+      ]
+    )
+])

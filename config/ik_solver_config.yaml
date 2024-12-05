@@ -1,0 +1,55 @@
+ur_on_linear_guide_ik_solver:
+  type: ik_solver/RosdynIkSolver
+  base_frame: guide_base_link # base frame of the chain
+  flange_frame: wrist_3_link # end frame of the chain
+  max_stall_iterations: 1000
+  min_stall_iterations: 50
+  parallel_ik_mode: 1
+  tool_frame: wrist_3_link # destination frame of the IK (it should be rigid attached to flange_frame)
+  desired_solutions: 1000 # number of desired solution
+  joint_names:
+  - guide_linear_joint
+  - shoulder_pan_joint
+  - shoulder_lift_joint
+  - elbow_joint
+  - wrist_1_joint
+  - wrist_2_joint
+  - wrist_3_joint
+
+# ur_on_linear_guide_ik_solver:
+#   type: ik_solver/RobotOnGuideIkSolver
+#   base_frame: guide_base_link # base frame of the chain
+#   robot_base_frame: base_link # robot base frame
+#   flange_frame: tool0 # end frame of the chain
+#   tool_frame: wrist_3_link # destination frame of the IK (it should be rigid attached to flange_frame)
+#   desired_solutions: 1000 # number of desired solution
+#   max_stall_iterations: 10000
+#   min_stall_iterations: 500
+#   parallel_ik_mode: 1
+#   max_exploration_range: 0.4
+
+#   joint_names:
+#   - guide_linear_joint
+#   - shoulder_pan_joint
+#   - shoulder_lift_joint
+#   - elbow_joint
+#   - wrist_1_joint
+#   - wrist_2_joint
+#   - wrist_3_joint
+
+#   mounted_robot_ik: # parameter for the mounted_robot
+#     type: ik_solver/Ur5IkSolver #ik_solver/RosdynIkSolver
+#     base_frame: base_link # base frame of the chain
+#     flange_frame: tool0 # end frame of the chain
+#     max_stall_iterations: 1000
+#     min_stall_iterations: 50
+#     parallel_ik_mode: 1
+#     tool_frame: wrist_3_link # destination frame of the IK (it should be rigid attached to flange_frame)
+#     desired_solutions: 1000 # number of desired solution
+#     joint_names:
+#     - shoulder_pan_joint
+#     - shoulder_lift_joint
+#     - elbow_joint
+#     - wrist_1_joint
+#     - wrist_2_joint
+#     - wrist_3_joint

@@ -1,0 +1,62 @@
+bt_executer:
+
+  wait:
+    wait_ms: 2000 #ms
+
+  move_to_conf_pick:
+    group_name: "ur_on_linear_guide"
+    fjt_action_name: "/ur_on_linear_guide_controller/follow_joint_trajectory"
+    simulation: False
+    speed_scaling_topic: "/ur_on_linear_guide_speed_ovr"
+    scaling: 100
+    pipeline_id: "ompl"
+    planner_id: "BiTRRT"
+    velocity_scaling_factor: 0.01
+    acceleration_scaling_factor: 0.01
+    joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
+    target_joints_configurations: [0.0,-1.78,-1.82,2.21,-1.88,-1.57,0.0]
+
+  move_to_conf_place:
+    group_name: "ur_on_linear_guide"
+    fjt_action_name: "/ur_on_linear_guide_controller/follow_joint_trajectory"
+    simulation: False
+    speed_scaling_topic: "/ur_on_linear_guide_speed_ovr"
+    scaling: 100
+    pipeline_id: "ompl"
+    planner_id: "BiTRRT"
+    velocity_scaling_factor: 0.01
+    acceleration_scaling_factor: 0.01
+    joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
+    target_joints_configurations: [0.50,-1.43,-1.18,1.60,-2.02,-1.57,0.0]
+
+  move_to_pick:
+    group_name: "ur_on_linear_guide"
+    world_name: "world"
+    ik_service_name: "/ur_on_linear_guide_ik_solver/get_ik"
+    location_name: "pick_pose"
+    fjt_action_name: "/ur_on_linear_guide_controller/follow_joint_trajectory"
+    simulation: False
+    speed_scaling_topic: "/ur_on_linear_guide_speed_ovr"
+    scaling: 100
+    pipeline_id: "ompl"
+    planner_id: "BiTRRT"
+    velocity_scaling_factor: 0.01
+    acceleration_scaling_factor: 0.01
+    joints_weights: [0.0,1,1,1,1,1,1]
+
+  move_to_place:
+    group_name: "ur_on_linear_guide"
+    world_name: "world"
+    ik_service_name: "/ur_on_linear_guide_ik_solver/get_ik"
+    location_name: "place_pose"
+    fjt_action_name: "/ur_on_linear_guide_controller/follow_joint_trajectory"
+    simulation: False
+    speed_scaling_topic: "/ur_on_linear_guide_speed_ovr"
+    scaling: 100
+    pipeline_id: "ompl"
+    planner_id: "BiTRRT"
+    velocity_scaling_factor: 0.01
+    acceleration_scaling_factor: 0.01
+    joints_weights: [0.0,1,1,1,1,1,1]
+
+  
