@@ -10,14 +10,21 @@
             <!-- <SubTree ID="Subtree name"/> -->                            
             <Repeat num_cycles="3">
                <Sequence>
-                  <MoveToConfSkill name="move_to_pick" action_name= "/move_to_conf" param_ns="move_to_conf_pick"/>
+                  <MoveToConfSkill name="move_to_conf_pick_approach" action_name= "/move_to_conf" param_ns="move_to_conf_pick_approach"/>
+                  <MoveToConfSkill name="move_to_conf_pick" action_name= "/move_to_conf" param_ns="move_to_conf_pick"/>
                   <WaitSkill name="wait" action_name= "/sleep_service" param_ns="wait"/> 
-                  <MoveToConfSkill name="move_to_place" action_name= "/move_to_conf" param_ns="move_to_conf_place"/>
+                  <MoveToConfSkill name="move_to_conf_pick_approach" action_name= "/move_to_conf" param_ns="move_to_conf_pick_approach"/>
+
+
+                  <MoveToConfSkill name="move_to_conf_place_approach" action_name= "/move_to_conf" param_ns="move_to_conf_place_approach"/>
+                  <MoveToConfSkill name="move_to_conf_place" action_name= "/move_to_conf" param_ns="move_to_conf_place"/>
                   <WaitSkill name="wait" action_name= "/sleep_service" param_ns="wait"/> 
+                  <MoveToConfSkill name="move_to_conf_place_approach" action_name= "/move_to_conf" param_ns="move_to_conf_place_approach"/>
+                  
                </Sequence>
             </Repeat>
             
-            <MoveToConfSkill name="move_to_pick" action_name= "/move_to_conf" param_ns="move_to_conf_pick"/>
+            <MoveToConfSkill name="move_to_conf_pick_approach" action_name= "/move_to_conf" param_ns="move_to_conf_pick_approach"/>
 
             <!-- <Repeat num_cycles="3">
                <Sequence>
