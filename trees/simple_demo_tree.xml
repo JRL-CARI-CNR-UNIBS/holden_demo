@@ -8,13 +8,12 @@
                       
            <!-- If you use subtrees -->
             <!-- <SubTree ID="Subtree name"/> -->                            
-            <Repeat num_cycles="3">
+            <Repeat num_cycles="5">
                <Sequence>
                   <MoveToConfSkill name="move_to_conf_pick_approach" action_name= "/move_to_conf" param_ns="move_to_conf_pick_approach"/>
                   <MoveToConfSkill name="move_to_conf_pick" action_name= "/move_to_conf" param_ns="move_to_conf_pick"/>
                   <WaitSkill name="wait" action_name= "/sleep_service" param_ns="wait"/> 
                   <MoveToConfSkill name="move_to_conf_pick_approach" action_name= "/move_to_conf" param_ns="move_to_conf_pick_approach"/>
-
 
                   <MoveToConfSkill name="move_to_conf_place_approach" action_name= "/move_to_conf" param_ns="move_to_conf_place_approach"/>
                   <MoveToConfSkill name="move_to_conf_place" action_name= "/move_to_conf" param_ns="move_to_conf_place"/>

@@ -1,0 +1,13 @@
+ <root BTCPP_format="4" >
+    <!-- If you want to include subtrees -->
+     <!-- <include path="./subtree.xml" /> -->
+
+    <!-- Main tree -->
+     <BehaviorTree ID="MainTree"> <!--DO NOT CHANGE -->
+        <Sequence name="root_sequence">
+
+            <WaitSkill name="wait" action_name= "/sleep_service" param_ns="wait"/> 
+ 
+        </Sequence>
+     </BehaviorTree>
+ </root>

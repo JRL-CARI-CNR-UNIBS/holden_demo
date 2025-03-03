@@ -1,7 +1,7 @@
 bt_executer:
 
   wait:
-    wait_ms: 2000 #ms
+    wait_ms: 100 #ms
 
   move_to_conf_pick_approach:
     group_name: "ur_on_linear_guide"

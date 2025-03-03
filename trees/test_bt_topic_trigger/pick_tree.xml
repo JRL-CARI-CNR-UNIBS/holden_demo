@@ -1,0 +1,17 @@
+ <root BTCPP_format="4" >
+    <!-- If you want to include subtrees -->
+     <!-- <include path="./subtree.xml" /> -->
+
+    <!-- Main tree -->
+     <BehaviorTree ID="MainTree"> <!--DO NOT CHANGE -->
+        <Sequence name="root_sequence">
+                      
+           <!-- If you use subtrees -->
+            <!-- <SubTree ID="Subtree name"/> -->                            
+               <Sequence>
+                  <MoveToConfSkill name="move_to_conf_pick" action_name= "/move_to_conf" param_ns="move_to_conf_pick"/>
+               </Sequence>
+            
+        </Sequence>
+     </BehaviorTree>
+ </root>

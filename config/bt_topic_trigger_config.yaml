@@ -1,0 +1,6 @@
+bt_topic_trigger: 
+  plugins: ["trajectory_loader_plugin", "move_to_plugin","move_to_conf_plugin","trigger_service_plugin","set_bool_service_plugin", "wait_plugin"] 
+  trees_paths: ["/home/holden/projects/holden_ws/src/holden_demo/trees/test_bt_topic_trigger"]
+  priority_trees: ["stop"] 
+  bt_topic: "/bt_trigger"
+
