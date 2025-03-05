@@ -72,13 +72,13 @@ def generate_launch_description():
     TimerAction(
       period=1.0,  # delay in seconds
       actions=[
-         Node(
-          package="trajectory_loader",
-          executable="move_to_server",
-          output="screen",
-          namespace="",
-          ros_arguments=["--log-level", "info"]
-         ),
+        #  Node(
+        #   package="trajectory_loader",
+        #   executable="move_to_server",
+        #   output="screen",
+        #   namespace="",
+        #   ros_arguments=["--log-level", "debug"]
+        #  ),
         Node(
           package="trajectory_loader",
           executable="move_to_conf_server",
