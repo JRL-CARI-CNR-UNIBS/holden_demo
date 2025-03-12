@@ -1,0 +1,17 @@
+string_velocity_position_converter_node:
+  ros__parameters:
+    joint_name: "guide_linear_joint"
+    joint_limits: [-0.001,0.98]
+    velocity_command_topic: "/velocity_command"
+    position_command_topic: "/linear_guide_position_forward_controller/commands"
+    speed_mapping:
+      - avanti
+      - "0.5"
+      - "2.0" #seconds to reset speed 
+      - indietro
+      - "-0.5"
+      - "2.0" #seconds to reset speed
+    loop_frequency: 1000.0
+    velocity_threshold: 0.01
+
+

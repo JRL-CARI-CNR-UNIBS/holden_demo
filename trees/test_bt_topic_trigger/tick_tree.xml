@@ -5,9 +5,11 @@
     <!-- Main tree -->
      <BehaviorTree ID="MainTree"> <!--DO NOT CHANGE -->
         <Sequence name="root_sequence">
+                      
+           <!-- If you use subtrees -->
+            <!-- <SubTree ID="Subtree name"/> -->                            
+            <Robotiq2f85Skill name="open_gripper" action_name= "/robotiq_action_controller/gripper_cmd" param_ns="open_gripper"/>
 
-            <WaitSkill name="wait" action_name= "/sleep_service" param_ns="wait"/> 
- 
         </Sequence>
      </BehaviorTree>
  </root>
