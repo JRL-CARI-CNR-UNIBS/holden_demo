@@ -6,11 +6,11 @@ string_velocity_position_converter_node:
     position_command_topic: "/linear_guide_position_forward_controller/commands"
     speed_mapping:
       - left
-      - "-1.0"
-      - "1.5" #seconds to reset speed 
+      - "-0.5"
+      - "1000000.0" #seconds to reset speed 
       - right
-      - "1.0"
-      - "1.5" #seconds to reset speed
+      - "0.5"
+      - "1000000.0" #seconds to reset speed
       - down
       - "0"
       - "0.001" #seconds to reset speed

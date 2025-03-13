@@ -20,61 +20,66 @@ def generate_launch_description():
           "--path-to-file",
           PathJoinSubstitution([
             config_folder,
-            "simple_demo_bt_config.yaml"        # load the behavior tree plugins and the tree
+            "bt_config.yaml"        # load the behavior tree plugins and the tree
           ]),
           "--path-to-file",
           PathJoinSubstitution([
             config_folder,
-            "simple_demo_skills_config.yaml"    # load the parameters of each skill plugin
+            "bt_skills_config.yaml"    # load the parameters of each skill plugin
+          ]),
+          "--path-to-file",
+          PathJoinSubstitution([
+            config_folder,
+            "trajectory.yaml"    # load the parameters of each skill plugin
           ])
         ],
         shell=False
       ),
 
-    # Poses to reach  
-    TimerAction(
-      period=0.0,  # delay in seconds
-      actions=[
-         Node(
-           package="tf2_ros",
-           executable="static_transform_publisher",
-           name="pick_pose_broadcaster",
-           arguments=["-0.126", "-0.390", "0.221", "0.918", "-0.021", "-0.021", "0.395","world","pick_pose"],
-           output="screen")
-      ]
-    ),
+    # #Poses to reach  
+    # TimerAction(
+    #   period=0.0,  # delay in seconds
+    #   actions=[
+    #      Node(
+    #        package="tf2_ros",
+    #        executable="static_transform_publisher",
+    #        name="pick_pose_broadcaster",
+    #        arguments=["-0.126", "-0.390", "0.221", "0.918", "-0.021", "-0.021", "0.395","world","pick_pose"],
+    #        output="screen")
+    #   ]
+    # ),
 
-    TimerAction(
-      period=0.0,  # delay in seconds
-      actions=[
-         Node(
-           package="tf2_ros",
-           executable="static_transform_publisher",
-           name="place_pose_broadcaster",
-           arguments=["0.476", "-0.439", "0.397", "0.980", "0.126", "-0.020", "0.151","world","place_pose"],
-           output="screen")
-      ]
-    ),
+    # TimerAction(
+    #   period=0.0,  # delay in seconds
+    #   actions=[
+    #      Node(
+    #        package="tf2_ros",
+    #        executable="static_transform_publisher",
+    #        name="place_pose_broadcaster",
+    #        arguments=["0.476", "-0.439", "0.397", "0.980", "0.126", "-0.020", "0.151","world","place_pose"],
+    #        output="screen")
+    #   ]
+    # ),
 
     # IK solver
-    TimerAction(
-      period=1.0,  # delay in seconds
-      actions=[
-      IncludeLaunchDescription(
-        launch_description_source=PythonLaunchDescriptionSource(
-          PathJoinSubstitution([FindPackageShare('ik_solver'),"launch","ik_solver.launch.py"])),
-          launch_arguments={'config': PathJoinSubstitution([config_folder,"ik_solver_config.yaml"])}.items()
-         )
-      ]
-    ),
+    # TimerAction(
+    #   period=1.0,  # delay in seconds
+    #   actions=[
+    #   IncludeLaunchDescription(
+    #     launch_description_source=PythonLaunchDescriptionSource(
+    #       PathJoinSubstitution([FindPackageShare('ik_solver'),"launch","ik_solver.launch.py"])),
+    #       launch_arguments={'config': PathJoinSubstitution([config_folder,"ik_solver_config.yaml"])}.items()
+    #      )
+    #   ]
+    # ),
 
     #Move to and sleep server node
     TimerAction(
-      period=1.0,  # delay in seconds
+      period=0.0,  # delay in seconds
       actions=[
          Node(
           package="trajectory_loader",
-          executable="move_to_server",
+          executable="trajectory_loader_server",
           output="screen",
           namespace="",
           ros_arguments=["--log-level", "info"]
@@ -95,7 +100,7 @@ def generate_launch_description():
 
     #Bt executer
     TimerAction(
-      period=1.0,  # delay in seconds
+      period=2.0,  # delay in seconds
       actions=[
         Node(
           package="bt_executer",

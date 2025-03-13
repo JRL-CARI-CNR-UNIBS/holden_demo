@@ -11,7 +11,7 @@ bt_executer:
     position: 0.2 # between 0.0 and 0.7929
     max_effort: 0.0
 
-  move_to_conf_pick_approach:
+  move_to_conf_home:
     group_name: "ur_on_linear_guide"
     fjt_action_name: "/ur_on_linear_guide_scaled_controller/follow_joint_trajectory"
     simulation: False
@@ -22,7 +22,7 @@ bt_executer:
     velocity_scaling_factor: 0.01
     acceleration_scaling_factor: 0.01
     joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
-    target_joints_configurations: [1.0,-0.4049928824054163,-1.31996995607485,1.3111495971679688,-1.6016228834735315,-1.5311372915851038,0.00025166873820126057]
+    target_joints_configurations: [0.0,-1.5312335574200928,-1.57,1.628033529891,-1.6274872486440086,-1.57,0.0]
 
   move_to_conf_pick:
     group_name: "ur_on_linear_guide"

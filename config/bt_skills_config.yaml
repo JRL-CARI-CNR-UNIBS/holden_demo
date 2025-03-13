@@ -1,0 +1,24 @@
+bt_executer:
+
+  holden_demo_trajectory_loader_skill:
+    group_name: "ur_on_linear_guide"
+    trj_names: ["holden_trj"]
+    fjt_action_name: "/ur_on_linear_guide_scaled_controller/follow_joint_trajectory"
+    repetitions: 3
+    recompute_time_law: True
+    simulation: False
+    speed_scaling_topic: "/safe_ovr"
+    scaling: 100
+
+  move_to_conf_home:
+    group_name: "ur_on_linear_guide"
+    fjt_action_name: "/ur_on_linear_guide_scaled_controller/follow_joint_trajectory"
+    simulation: False
+    speed_scaling_topic: "/ur_on_linear_guide_speed_ovr"
+    scaling: 100
+    pipeline_id: "ompl"
+    planner_id: "BiTRRT"
+    velocity_scaling_factor: 0.01
+    acceleration_scaling_factor: 0.01
+    joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
+    target_joints_configurations: [0.0,-1.5312335574200928,-1.57,1.628033529891,-1.6274872486440086,-1.57,0.0]
