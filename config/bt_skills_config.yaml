@@ -4,7 +4,7 @@ bt_executer:
     group_name: "ur_on_linear_guide"
     trj_names: ["holden_trj"]
     fjt_action_name: "/ur_on_linear_guide_scaled_controller/follow_joint_trajectory"
-    repetitions: 3
+    repetitions: 200
     recompute_time_law: True
     simulation: False
     speed_scaling_topic: "/safe_ovr"

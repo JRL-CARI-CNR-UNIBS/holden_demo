@@ -1,3 +1,5 @@
+<!-- PLACE TAVOLO A SINISTRA -->
+
  <root BTCPP_format="4" >
     <!-- If you want to include subtrees -->
      <!-- <include path="./subtree.xml" /> -->
@@ -8,8 +10,10 @@
                       
            <!-- If you use subtrees -->
             <!-- <SubTree ID="Subtree name"/> -->                            
-            <Robotiq2f85Skill name="open_gripper" action_name= "/robotiq_action_controller/gripper_cmd" param_ns="open_gripper"/>
-
+               <Sequence>
+                  <MoveToConfSkill name="move_to_conf_place" action_name= "/move_to_conf" param_ns="move_to_conf_place"/>
+               </Sequence>
+            
         </Sequence>
      </BehaviorTree>
  </root>
