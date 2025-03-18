@@ -75,3 +75,16 @@ bt_executer:
     acceleration_scaling_factor: 0.01
     joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
     target_joints_configurations: [0.0,-2.3423100153552454,-0.8665021101581019,1.1591219902038574,-1.852614704762594,-1.577540699635641,-0.000287357960836232]
+
+  move_to_conf_give:
+    group_name: "ur_on_linear_guide"
+    fjt_action_name: "/ur_on_linear_guide_scaled_controller/follow_joint_trajectory"
+    simulation: False
+    speed_scaling_topic: "/ur_on_linear_guide_speed_ovr"
+    scaling: 100
+    pipeline_id: "ompl"
+    planner_id: "BiTRRT"
+    velocity_scaling_factor: 0.01
+    acceleration_scaling_factor: 0.01
+    joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
+    target_joints_configurations: [0.5351068777131383,-1.5312471850963396,-1.1439016718693455,1.1703671318470665,-2.0943297204583287,-1.5699958782745058,0.0]
