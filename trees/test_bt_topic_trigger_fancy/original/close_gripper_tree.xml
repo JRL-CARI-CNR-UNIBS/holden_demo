@@ -1,0 +1,19 @@
+<!-- VERSA -->
+
+ <root BTCPP_format="4" >
+    <!-- If you want to include subtrees -->
+     <!-- <include path="./subtree.xml" /> -->
+
+    <!-- Main tree -->
+     <BehaviorTree ID="MainTree"> <!--DO NOT CHANGE -->
+        <Sequence name="root_sequence">
+                      
+           <!-- If you use subtrees -->
+            <!-- <SubTree ID="Subtree name"/> -->                            
+               <Sequence>
+                  <Robotiq2f85Skill name="close_gripper" action_name= "/robotiq_action_controller/gripper_cmd" param_ns="close_gripper"/>
+               </Sequence>
+            
+        </Sequence>
+     </BehaviorTree>
+ </root>

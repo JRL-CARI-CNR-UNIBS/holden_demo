@@ -8,7 +8,7 @@ bt_executer:
     max_effort: 0.1 
   
   close_gripper:
-    position: 0.2 # between 0.0 and 0.7929
+    position: 0.79 # between 0.0 and 0.7929
     max_effort: 0.0
 
   move_to_conf_home:
