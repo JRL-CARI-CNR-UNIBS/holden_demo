@@ -8,8 +8,43 @@ bt_executer:
     max_effort: 0.1 
   
   close_gripper:
-    position: 0.79 # between 0.0 and 0.7929
+    position: 0.35 # between 0.0 and 0.7929
     max_effort: 0.0
+
+  add_bottle:
+    frame_id: "world"
+    object_id: "bottle"
+    primitive_type: "cylinder"
+    dimensions:
+      height: 0.12
+      radius: 0.02
+    pose:
+      position:
+        x: 1.38
+        y: -0.14
+        z: 0.12
+      orientation:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+        w: 1.0
+    add: true
+
+  remove_bottle:
+    object_id: "bottle"
+    add: false
+
+  attach_bottle:
+    frame_id: "flange"
+    object_id: "bottle"
+    touch_links: ["robotiq_85_left_finger_link", "robotiq_85_left_finger_tip_link", "robotiq_85_left_inner_knuckle_link", "robotiq_85_left_knuckle_link",
+                  "robotiq_85_right_finger_link", "robotiq_85_right_finger_tip_link", "robotiq_85_right_inner_knuckle_link", "robotiq_85_right_knuckle_link"]
+    attach: true
+
+  detach_bottle:
+    frame_id: "flange"
+    object_id: "bottle"
+    attach: false
 
   move_to_conf_home:
     group_name: "ur_on_linear_guide"

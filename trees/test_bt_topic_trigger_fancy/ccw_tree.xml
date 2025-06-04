@@ -13,11 +13,13 @@
                <Sequence>
                   <MoveToConfSkill name="move_to_conf_pick_bottle_to_serve" action_name= "/move_to_conf" param_ns="move_to_conf_pick_bottle_to_serve"/>
                   <Robotiq2f85Skill name="close_gripper_bottle" action_name= "/robotiq_action_controller/gripper_cmd" param_ns="close_gripper_bottle"/>
+                  <MoveitAttachObjectSkill name="attach_bottle" service_name= "/attach_scene_object" param_ns="attach_bottle"/>
                   <MoveToConfSkill name="move_to_conf_bottle_above_cup" action_name= "/move_to_conf" param_ns="move_to_conf_bottle_above_cup"/>
                   <MoveToConfSkill name="move_to_conf_serve_water" action_name= "/move_to_conf" param_ns="move_to_conf_serve_water"/>
                   <MoveToConfSkill name="move_to_conf_bottle_above_cup" action_name= "/move_to_conf" param_ns="move_to_conf_bottle_above_cup"/>
                   <MoveToConfSkill name="move_to_conf_pick_bottle_to_serve" action_name= "/move_to_conf" param_ns="move_to_conf_pick_bottle_to_serve"/>
                   <Robotiq2f85Skill name="open_gripper" action_name= "/robotiq_action_controller/gripper_cmd" param_ns="open_gripper"/>
+                  <MoveitAttachObjectSkill name="detach_bottle" service_name= "/attach_scene_object" param_ns="detach_bottle"/>
                   <MoveToConfSkill name="move_to_conf_place_approach" action_name= "/move_to_conf" param_ns="move_to_conf_place_approach"/>
                </Sequence>
             

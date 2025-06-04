@@ -12,6 +12,7 @@
                   <Robotiq2f85Skill name="open_gripper" action_name= "/robotiq_action_controller/gripper_cmd" param_ns="open_gripper"/>
                   <MoveToConfSkill name="move_to_conf_pick_bottle" action_name= "/move_to_conf" param_ns="move_to_conf_pick_bottle"/>
                   <Robotiq2f85Skill name="close_gripper_bottle" action_name= "/robotiq_action_controller/gripper_cmd" param_ns="close_gripper_bottle"/>
+                  <MoveitAttachObjectSkill name="attach_bottle" service_name= "/attach_scene_object" param_ns="attach_bottle"/>
                   <MoveToConfSkill name="move_to_conf_pick_approach" action_name= "/move_to_conf" param_ns="move_to_conf_pick_approach"/>
                </Sequence>
  

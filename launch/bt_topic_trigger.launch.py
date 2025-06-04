@@ -68,6 +68,20 @@ def generate_launch_description():
     #   ]
     # ),
 
+    TimerAction(
+      period=1.0,  # delay in seconds
+      actions=[
+        Node(
+          package="moveit_object_attacher",
+          executable="object_attacher_node",
+          output="screen",
+          namespace="",
+          ros_arguments=["--log-level", "info"],
+          parameters=[{"group_name": "ur_on_linear_guide"}]
+         )
+      ]
+    ),
+
     #Move to and sleep server node
     TimerAction(
       period=1.0,  # delay in seconds

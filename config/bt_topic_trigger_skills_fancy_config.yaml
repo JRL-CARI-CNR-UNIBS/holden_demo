@@ -8,12 +8,82 @@ bt_executer:
     max_effort: 0.1 
   
   close_gripper:
-    position: 0.75 # between 0.0 and 0.7929
+    position: 0.25 # between 0.0 and 0.7929
     max_effort: 0.0
 
   close_gripper_bottle:
-    position: 0.4 # between 0.0 and 0.7929
+    position: 0.35 # between 0.0 and 0.7929
     max_effort: 0.0
+
+  add_bottle:
+    frame_id: "world"
+    object_id: "bottle"
+    primitive_type: "cylinder"
+    dimensions:
+      height: 0.12
+      radius: 0.02
+    pose:
+      position:
+        x: 1.50
+        y: -0.21
+        z: 0.17
+      orientation:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+        w: 1.0
+    add: true
+
+  remove_bottle:
+    object_id: "bottle"
+    add: false
+
+  attach_bottle:
+    frame_id: "flange"
+    object_id: "bottle"
+    touch_links: ["robotiq_85_left_finger_link", "robotiq_85_left_finger_tip_link", "robotiq_85_left_inner_knuckle_link", "robotiq_85_left_knuckle_link",
+                  "robotiq_85_right_finger_link", "robotiq_85_right_finger_tip_link", "robotiq_85_right_inner_knuckle_link", "robotiq_85_right_knuckle_link"]
+    attach: true
+
+  detach_bottle:
+    frame_id: "flange"
+    object_id: "bottle"
+    attach: false
+
+  add_cup:
+    frame_id: "world"
+    object_id: "cup"
+    primitive_type: "cylinder"
+    dimensions:
+      height: 0.07
+      radius: 0.025
+    pose:
+      position:
+        x: 1.38
+        y: -0.14
+        z: 0.1
+      orientation:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+        w: 1.0
+    add: true
+
+  remove_cup:
+    object_id: "cup"
+    add: false
+
+  attach_cup:
+    frame_id: "flange"
+    object_id: "cup"
+    touch_links: ["robotiq_85_left_finger_link", "robotiq_85_left_finger_tip_link", "robotiq_85_left_inner_knuckle_link", "robotiq_85_left_knuckle_link",
+                  "robotiq_85_right_finger_link", "robotiq_85_right_finger_tip_link", "robotiq_85_right_inner_knuckle_link", "robotiq_85_right_knuckle_link"]
+    attach: true
+
+  detach_cup:
+    frame_id: "flange"
+    object_id: "cup"
+    attach: false
 
   move_to_conf_pick_bottle_to_serve:
     group_name: "ur_on_linear_guide"

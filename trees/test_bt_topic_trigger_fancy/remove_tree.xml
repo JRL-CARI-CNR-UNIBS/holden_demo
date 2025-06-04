@@ -8,8 +8,8 @@
                       
            <!-- If you use subtrees -->
             <!-- <SubTree ID="Subtree name"/> -->                            
-            <Robotiq2f85Skill name="close_gripper" action_name= "/robotiq_action_controller/gripper_cmd" param_ns="close_gripper"/>
-            <MoveitAttachObjectSkill name="attach_bottle" service_name= "/attach_scene_object" param_ns="attach_bottle"/>
+            <MoveitAddObjectSkill name="remove_bottle" service_name= "/add_scene_object" param_ns="remove_bottle"/>
+            <MoveitAddObjectSkill name="remove_cup" service_name= "/add_scene_object" param_ns="remove_cup"/>
 
         </Sequence>
      </BehaviorTree>

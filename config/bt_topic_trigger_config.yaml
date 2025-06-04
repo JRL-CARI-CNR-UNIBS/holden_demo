@@ -1,5 +1,5 @@
 bt_topic_trigger: 
-  plugins: ["trajectory_loader_plugin","move_to_plugin","move_to_conf_plugin","wait_plugin","robotiq_2f85_plugin"] 
+  plugins: ["trajectory_loader_plugin","move_to_plugin","move_to_conf_plugin","wait_plugin","robotiq_2f85_plugin","moveit_attach_object_plugin","moveit_add_object_plugin"] 
   trees_paths: ["/home/holden/projects/holden_ws/src/holden_demo/trees/test_bt_topic_trigger"]
   priority_trees: ["s"] 
   bt_topic: "/gesture_recognition"

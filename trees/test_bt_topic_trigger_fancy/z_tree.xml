@@ -12,6 +12,7 @@
                <Sequence>
                   <MoveToConfSkill name="move_to_conf_place" action_name= "/move_to_conf" param_ns="move_to_conf_place"/>
                   <Robotiq2f85Skill name="open_gripper" action_name= "/robotiq_action_controller/gripper_cmd" param_ns="open_gripper"/>
+                  <MoveitAttachObjectSkill name="detach_cup" service_name= "/attach_scene_object" param_ns="detach_cup"/>
                   <MoveToConfSkill name="move_to_conf_place_approach" action_name= "/move_to_conf" param_ns="move_to_conf_place_approach"/>
                </Sequence>
  
