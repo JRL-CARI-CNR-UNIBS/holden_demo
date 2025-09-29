@@ -32,6 +32,15 @@ def generate_launch_description():
       ),
 
     TimerAction(
+      period=0.1,  # delay in seconds
+      actions=[
+        Node(
+          package="btcpp_ros2_samples",
+          executable="sleep_server")
+      ]
+    ),
+
+    TimerAction(
       period=1.0,  # delay in seconds
       actions=[
         Node(

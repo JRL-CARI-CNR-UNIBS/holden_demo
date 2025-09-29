@@ -2,6 +2,9 @@ bt_executer:
 
   wait:
     wait_ms: 100 #ms
+    
+  wait_long:
+    wait_ms: 1500 #ms
 
   open_gripper:
     position: 0.0 # between 0.0 and 0.7929
@@ -20,13 +23,13 @@ bt_executer:
     object_id: "bottle"
     primitive_type: "cylinder"
     dimensions:
-      height: 0.12
+      height: 0.15
       radius: 0.02
     pose:
       position:
         x: 1.50
         y: -0.21
-        z: 0.17
+        z: 0.13
       orientation:
         x: 0.0
         y: 0.0
@@ -55,13 +58,13 @@ bt_executer:
     object_id: "cup"
     primitive_type: "cylinder"
     dimensions:
-      height: 0.07
-      radius: 0.025
+      height: 0.05
+      radius: 0.02
     pose:
       position:
         x: 1.38
         y: -0.14
-        z: 0.1
+        z: 0.08
       orientation:
         x: 0.0
         y: 0.0
@@ -151,7 +154,20 @@ bt_executer:
     velocity_scaling_factor: 0.01
     acceleration_scaling_factor: 0.01
     joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
-    target_joints_configurations: [-0.001, -2.4471235910998743, -1.0496485869037073, 1.403223991394043, -2.0103147665606897, -1.5483363310443323, 0.005813098046928644]
+    target_joints_configurations: [9.782193911657977e-05, -2.3759295976863477, -0.9679339501213478, 1.381629271670591, -2.059235457759855, -1.5774652564823715, -0.00038097143495382396]
+
+  move_to_conf_leave_bottle:
+    group_name: "ur_on_linear_guide"
+    fjt_action_name: "/ur_on_linear_guide_scaled_controller/follow_joint_trajectory"
+    simulation: False
+    speed_scaling_topic: "/ur_on_linear_guide_speed_ovr"
+    scaling: 100
+    pipeline_id: "ompl"
+    planner_id: "BiTRRT"
+    velocity_scaling_factor: 0.01
+    acceleration_scaling_factor: 0.01
+    joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
+    target_joints_configurations: [2.177132000216099e-05, -2.3759347404592903, -0.8976791341711223, 1.17047779699086, -1.8831213602615358, -1.5664172929178446, -0.08791978203058662]
 
   move_to_conf_pick_bottle:
     group_name: "ur_on_linear_guide"
@@ -164,7 +180,7 @@ bt_executer:
     velocity_scaling_factor: 0.01
     acceleration_scaling_factor: 0.01
     joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
-    target_joints_configurations: [0.999905, -0.4255006949054163, -0.8162129561053675, 0.9644718170166016, -1.6465547720538538, -1.5695527235614222, -0.5347231070147913]
+    target_joints_configurations: [0.9998398634706795, -0.44009119020819965, -0.8624521511000034, 1.152699149274079, -1.8479994313672998, -1.5309616309639618, 0.00026360936569981276]
 
   move_to_conf_home:
     group_name: "ur_on_linear_guide"
@@ -203,7 +219,7 @@ bt_executer:
     velocity_scaling_factor: 0.01
     acceleration_scaling_factor: 0.01
     joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
-    target_joints_configurations: [1.0,-0.4046571890460413,-1.1754615942584437,1.6654682159423828,-2.0698588530169886,-1.5612176100360315,0.0]
+    target_joints_configurations: [1.0,-0.40485320109133005,-1.0737033838862093,1.7511705168529188,-2.2350871850604244,-1.5311372915851038,0.00025166873820126057]
 
   move_to_conf_place_approach:
     group_name: "ur_on_linear_guide"
@@ -229,7 +245,7 @@ bt_executer:
     velocity_scaling_factor: 0.01
     acceleration_scaling_factor: 0.01
     joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
-    target_joints_configurations: [0.0,-2.3423100153552454,-0.8665021101581019,1.1591219902038574,-1.852614704762594,-1.577540699635641,-0.000287357960836232]
+    target_joints_configurations: [0.0, -2.27041712745959, -0.9679289117031925, 1.5576909440570432, -2.129502916015714, -1.5775032586727378, -0.00027930167541766193]
 
   move_to_conf_give:
     group_name: "ur_on_linear_guide"
