@@ -1,0 +1,113 @@
+repositories:
+  BehaviorTree.CPP:
+    type: git
+    url: https://github.com/BehaviorTree/BehaviorTree.CPP.git
+    version: master
+  BehaviorTree.ROS2:
+    type: git
+    url: https://github.com/BehaviorTree/BehaviorTree.ROS2.git
+    version: humble
+  bt_executer:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/bt_executer.git
+    version: master
+  bt_executer_examples:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/bt_executer_examples.git
+    version: master
+  bt_topic_trigger:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/bt_topic_trigger.git
+    version: master
+cnr_common:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/cnr_common.git
+    version: master
+  cnr_control_toolbox:
+    type: git
+    url: https://github.com/CNR-STIIMA-IRAS/cnr_control_toolbox.git
+    version: modern_cmake
+  ethercat_driver_ros2:
+    type: git
+    url: https://github.com/ICube-Robotics/ethercat_driver_ros2.git
+    version: main
+  holden_control:
+    type: git
+    url: https://github.com/CNR-STIIMA-IRAS/holden_control.git
+    version: cesare-devl
+  holden_demo:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/holden_demo.git
+    version: master
+ik_solver:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/ik_solver.git
+    version: master
+  ik_solver_msgs:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/ik_solver_msgs.git
+    version: master
+  moveit2_calibration:
+    type: git
+    url: https://github.com/AndrejOrsula/moveit2_calibration.git
+    version: ros2_port
+  moveit_object_attacher:
+    type: git
+    url: https://github.com/CNR-STIIMA-IRAS/moveit_object_attacher.git
+    version: master
+  name_sorting:
+    type: git
+    url: https://github.com/CNR-STIIMA-IRAS/name_sorting
+    version: ros2
+rdyn_core:
+    type: git
+    url: https://github.com/CNR-STIIMA-IRAS/rosdyn
+    version: modern_cmake
+  robot_on_guide_ik_solver:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/robot_on_guide_ik_solver.git
+    version: master
+  robotiq_2f85_skill:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/robotiq_2f85_skill.git
+    version: master
+  ros2_handeye_calibration:
+    type: git
+    url: https://github.com/giuschio/ros2_handeye_calibration.git
+    version: ros2-minimal
+  ros2_move_to:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/ros2_move_to.git
+    version: master
+ros2_robotiq_gripper:
+    type: git
+    url: https://github.com/PickNikRobotics/ros2_robotiq_gripper.git
+    version: humble
+  rosdyn_ik_solver:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/rosdyn_ik_solver.git
+    version: master
+  scaled_follow_joint_trajectory_controller_ros2:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/scaled_follow_joint_trajectory_controller_ros2.git
+    version: devel
+  serial:
+    type: git
+    url: https://github.com/tylerjw/serial.git
+    version: ros2
+  ssm_safety_ros:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/ssm_safety_ros.git
+    version: main
+  strig_velocity_position_converter:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/strig_velocity_position_converter.git
+    version: master
+  ur_ik_solver:
+    type: git
+    url: https://github.com/JRL-CARI-CNR-UNIBS/ur_ik_solver.git
+    version: ros2
+  velocity_scaling_iso15066:
+    type: git
+    url: https://github.com/CNR-STIIMA-IRAS/ssm_safety
+    version: rosfree
