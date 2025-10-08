@@ -13,21 +13,14 @@ def generate_launch_description():
   return LaunchDescription([
 
     ExecuteProcess(
-        cmd = [
-          FindExecutable(name="cnr_param_server"),
-          "--path-to-file",
-          PathJoinSubstitution([
-            config_folder,
-            "bt_topic_trigger_config.yaml"  
-          ]),
-          "--path-to-file",
-          PathJoinSubstitution([
-            config_folder,
-            "bt_topic_trigger_skills_config.yaml" 
-          ])
+        cmd=[
+            FindExecutable(name="cnr_param_server"),
+            "--path-to-file", PathJoinSubstitution([config_folder, "bt_topic_trigger_config.yaml"]),
+            "--path-to-file", PathJoinSubstitution([config_folder, "bt_topic_trigger_skills_config.yaml"])
         ],
         shell=False
-      ),
+    ),
+
 
     TimerAction(
       period=1.0,  # delay in seconds

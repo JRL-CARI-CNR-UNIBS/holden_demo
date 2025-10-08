@@ -19,10 +19,10 @@ repositories:
     type: git
     url: https://github.com/JRL-CARI-CNR-UNIBS/bt_topic_trigger.git
     version: master
-cnr_common:
-    type: git
-    url: https://github.com/JRL-CARI-CNR-UNIBS/cnr_common.git
-    version: master
+  cnr_common:
+      type: git
+      url: https://github.com/JRL-CARI-CNR-UNIBS/cnr_common.git
+      version: master
   cnr_control_toolbox:
     type: git
     url: https://github.com/CNR-STIIMA-IRAS/cnr_control_toolbox.git
@@ -39,10 +39,10 @@ cnr_common:
     type: git
     url: https://github.com/JRL-CARI-CNR-UNIBS/holden_demo.git
     version: master
-ik_solver:
-    type: git
-    url: https://github.com/JRL-CARI-CNR-UNIBS/ik_solver.git
-    version: master
+  ik_solver:
+      type: git
+      url: https://github.com/JRL-CARI-CNR-UNIBS/ik_solver.git
+      version: master
   ik_solver_msgs:
     type: git
     url: https://github.com/JRL-CARI-CNR-UNIBS/ik_solver_msgs.git
@@ -59,10 +59,10 @@ ik_solver:
     type: git
     url: https://github.com/CNR-STIIMA-IRAS/name_sorting
     version: ros2
-rdyn_core:
-    type: git
-    url: https://github.com/CNR-STIIMA-IRAS/rosdyn
-    version: modern_cmake
+  rdyn_core:
+      type: git
+      url: https://github.com/CNR-STIIMA-IRAS/rosdyn
+      version: modern_cmake
   robot_on_guide_ik_solver:
     type: git
     url: https://github.com/JRL-CARI-CNR-UNIBS/robot_on_guide_ik_solver.git
@@ -79,10 +79,10 @@ rdyn_core:
     type: git
     url: https://github.com/JRL-CARI-CNR-UNIBS/ros2_move_to.git
     version: master
-ros2_robotiq_gripper:
-    type: git
-    url: https://github.com/PickNikRobotics/ros2_robotiq_gripper.git
-    version: humble
+  ros2_robotiq_gripper:
+      type: git
+      url: https://github.com/PickNikRobotics/ros2_robotiq_gripper.git
+      version: humble
   rosdyn_ik_solver:
     type: git
     url: https://github.com/JRL-CARI-CNR-UNIBS/rosdyn_ik_solver.git

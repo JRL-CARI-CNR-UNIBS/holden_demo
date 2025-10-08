@@ -1,0 +1,15 @@
+ <root BTCPP_format="4" >
+    <!-- If you want to include subtrees -->
+     <!-- <include path="./subtree.xml" /> -->
+
+    <!-- Main tree -->
+     <BehaviorTree ID="MainTree"> <!--DO NOT CHANGE -->
+        <Sequence name="root_sequence">
+                      
+           <!-- If you use subtrees -->
+            <!-- <SubTree ID="Subtree name"/> -->                            
+            <MoveitAddObjectSkill name="add_bottle" service_name="/add_scene_object" param_ns="add_bottle"/>
+
+        </Sequence>
+     </BehaviorTree>
+ </root>

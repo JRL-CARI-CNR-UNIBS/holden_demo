@@ -1,0 +1,16 @@
+ <root BTCPP_format="4" >
+    <!-- If you want to include subtrees -->
+     <!-- <include path="./subtree.xml" /> -->
+
+    <!-- Main tree -->
+     <BehaviorTree ID="MainTree"> <!--DO NOT CHANGE -->
+        <Sequence name="root_sequence">
+                      
+           <!-- If you use subtrees -->
+            <!-- <SubTree ID="Subtree name"/> -->                            
+            <Robotiq2f85Skill name="close_gripper" action_name= "/fr3_gripper/gripper_cmd" param_ns="close_gripper"/>
+            <MoveitAttachObjectSkill name="attach_bottle" service_name= "/attach_scene_object" param_ns="attach_bottle"/>
+
+        </Sequence>
+     </BehaviorTree>
+ </root>

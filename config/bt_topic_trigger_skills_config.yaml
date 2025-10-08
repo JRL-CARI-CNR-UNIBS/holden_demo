@@ -4,11 +4,11 @@ bt_executer:
     wait_ms: 100 #ms
 
   open_gripper:
-    position: 0.0 # between 0.0 and 0.7929
+    position: 0.07
     max_effort: 0.1 
   
   close_gripper:
-    position: 0.35 # between 0.0 and 0.7929
+    position: 0.0
     max_effort: 0.0
 
   add_bottle:
@@ -35,91 +35,111 @@ bt_executer:
     add: false
 
   attach_bottle:
-    frame_id: "flange"
+    frame_id: "fr3_hand"
     object_id: "bottle"
-    touch_links: ["robotiq_85_left_finger_link", "robotiq_85_left_finger_tip_link", "robotiq_85_left_inner_knuckle_link", "robotiq_85_left_knuckle_link",
-                  "robotiq_85_right_finger_link", "robotiq_85_right_finger_tip_link", "robotiq_85_right_inner_knuckle_link", "robotiq_85_right_knuckle_link"]
+    touch_links: ["fr3_hand","fr3_hand_tcp", "fr3_leftfinger", "fr3_rightfinger"]
     attach: true
 
   detach_bottle:
-    frame_id: "flange"
+    frame_id: "fr3_hand"
     object_id: "bottle"
     attach: false
 
   move_to_conf_home:
-    group_name: "ur_on_linear_guide"
-    fjt_action_name: "/ur_on_linear_guide_scaled_controller/follow_joint_trajectory"
+    group_name: "fr3_arm"
+    fjt_action_name: "/fr3_arm_scaled_controller/follow_joint_trajectory"
     simulation: False
-    speed_scaling_topic: "/ur_on_linear_guide_speed_ovr"
+    speed_scaling_topic: "/speed_ovr"
     scaling: 100
     pipeline_id: "ompl"
     planner_id: "BiTRRT"
     velocity_scaling_factor: 0.01
     acceleration_scaling_factor: 0.01
-    joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
+    joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
     target_joints_configurations: [0.0,-1.5312335574200928,-1.57,1.628033529891,-1.6274872486440086,-1.57,0.0]
 
   move_to_conf_pick_approach:
-    group_name: "ur_on_linear_guide"
-    fjt_action_name: "/ur_on_linear_guide_scaled_controller/follow_joint_trajectory"
+    group_name: "fr3_arm"
+    fjt_action_name: "/fr3_arm_scaled_controller/follow_joint_trajectory"
     simulation: False
-    speed_scaling_topic: "/ur_on_linear_guide_speed_ovr"
+    speed_scaling_topic: "/speed_ovr"
     scaling: 100
     pipeline_id: "ompl"
     planner_id: "BiTRRT"
     velocity_scaling_factor: 0.01
     acceleration_scaling_factor: 0.01
-    joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
-    target_joints_configurations: [1.0,-0.4049928824054163,-1.31996995607485,1.3111495971679688,-1.6016228834735315,-1.5311372915851038,0.00025166873820126057]
+    joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
+    target_joints_configurations: 
+      - 0.19197620106038832
+      - 0.11701437911634627
+      - 0.46680892648820776
+      - -2.099846761107594
+      - -0.06557814420012595
+      - 2.203800505639704
+      - 1.4805658005795939
 
   move_to_conf_pick:
-    group_name: "ur_on_linear_guide"
-    fjt_action_name: "/ur_on_linear_guide_scaled_controller/follow_joint_trajectory"
+    group_name: "fr3_arm"
+    fjt_action_name: "/fr3_arm_scaled_controller/follow_joint_trajectory"
     simulation: False
-    speed_scaling_topic: "/ur_on_linear_guide_speed_ovr"
+    speed_scaling_topic: "/speed_ovr"
     scaling: 100
     pipeline_id: "ompl"
     planner_id: "BiTRRT"
     velocity_scaling_factor: 0.01
     acceleration_scaling_factor: 0.01
-    joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
+    joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
     target_joints_configurations: [1.0,-0.4046571890460413,-1.1754615942584437,1.6654682159423828,-2.0698588530169886,-1.5612176100360315,0.0]
 
   move_to_conf_place_approach:
-    group_name: "ur_on_linear_guide"
-    fjt_action_name: "/ur_on_linear_guide_scaled_controller/follow_joint_trajectory"
+    group_name: "fr3_arm"
+    fjt_action_name: "/fr3_arm_scaled_controller/follow_joint_trajectory"
     simulation: False
-    speed_scaling_topic: "/ur_on_linear_guide_speed_ovr"
+    speed_scaling_topic: "/speed_ovr"
     scaling: 100
     pipeline_id: "ompl"
     planner_id: "BiTRRT"
     velocity_scaling_factor: 0.01
     acceleration_scaling_factor: 0.01
-    joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
-    target_joints_configurations: [0.0,-2.342357937489645,-1.2317474524127405,1.2642273902893066,-1.6274951140033167,-1.5775168577777308,-0.000287357960836232]
+    joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
+    target_joints_configurations:
+      - -0.3890962297483688
+      - -0.049476036365181754
+      - -0.3417838013993172
+      - -2.1831496900303717
+      - -0.019045340397745365
+      - 2.1367188733160454
+      - 0.06550199382413471
 
   move_to_conf_place:
-    group_name: "ur_on_linear_guide"
-    fjt_action_name: "/ur_on_linear_guide_scaled_controller/follow_joint_trajectory"
+    group_name: "fr3_arm"
+    fjt_action_name: "/fr3_arm_scaled_controller/follow_joint_trajectory"
     simulation: False
-    speed_scaling_topic: "/ur_on_linear_guide_speed_ovr"
+    speed_scaling_topic: "/speed_ovr"
     scaling: 100
     pipeline_id: "ompl"
     planner_id: "BiTRRT"
     velocity_scaling_factor: 0.01
     acceleration_scaling_factor: 0.01
-    joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
-    target_joints_configurations: [0.0,-2.3423100153552454,-0.8665021101581019,1.1591219902038574,-1.852614704762594,-1.577540699635641,-0.000287357960836232]
+    joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
+    target_joints_configurations: 
+      - -0.40980642100012316
+      - 0.34876069845937385
+      - -0.28420102708886946
+      - -2.231272917890299
+      - 0.1762769992784698
+      - 2.5603757166657815
+      - -0.03981556460702614
 
   move_to_conf_give:
-    group_name: "ur_on_linear_guide"
-    fjt_action_name: "/ur_on_linear_guide_scaled_controller/follow_joint_trajectory"
+    group_name: "fr3_arm"
+    fjt_action_name: "/fr3_arm_scaled_controller/follow_joint_trajectory"
     simulation: False
-    speed_scaling_topic: "/ur_on_linear_guide_speed_ovr"
+    speed_scaling_topic: "/speed_ovr"
     scaling: 100
     pipeline_id: "ompl"
     planner_id: "BiTRRT"
     velocity_scaling_factor: 0.01
     acceleration_scaling_factor: 0.01
-    joints_names: ["guide_linear_joint", "shoulder_pan_joint", "shoulder_lift_joint", "elbow_joint", "wrist_1_joint", "wrist_2_joint", "wrist_3_joint"]
+    joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
     target_joints_configurations: [0.5351068777131383,-1.5312471850963396,-1.1439016718693455,1.1703671318470665,-2.0943297204583287,-1.5699958782745058,0.0]
