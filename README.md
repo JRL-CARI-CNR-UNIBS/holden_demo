@@ -73,7 +73,7 @@ cd ~/projects/holden_ws/src
 ## 4. Download the Dependencies File
 Download the `deps.repos` file:
 ```bash
-curl -o deps.repos https://raw.githubusercontent.com/JRL-CARI-CNR-UNIBS/holden_demo/master/deps.repos
+curl -o deps.repos https://raw.githubusercontent.com/JRL-CARI-CNR-UNIBS/holden_demo/franka/deps.repos
 
 ```
 
