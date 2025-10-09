@@ -16,13 +16,13 @@ bt_executer:
     object_id: "bottle"
     primitive_type: "cylinder"
     dimensions:
-      height: 0.12
+      height: 0.08
       radius: 0.02
     pose:
       position:
-        x: 1.38
-        y: -0.14
-        z: 0.12
+        x: -0.028
+        y: 0.34
+        z: 0.7925
       orientation:
         x: 0.0
         y: 0.0
@@ -56,7 +56,15 @@ bt_executer:
     velocity_scaling_factor: 0.01
     acceleration_scaling_factor: 0.01
     joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
-    target_joints_configurations: [0.0,-1.5312335574200928,-1.57,1.628033529891,-1.6274872486440086,-1.57,0.0]
+    target_joints_configurations: 
+    - 0.0
+    - -0.7854275618150143
+    - 0.0
+    - -2.356115255378446
+    - 0.0
+    - 1.5707141865709817
+    - 0.7854875236091913
+
 
   move_to_conf_pick_approach:
     group_name: "fr3_arm"
@@ -89,7 +97,14 @@ bt_executer:
     velocity_scaling_factor: 0.01
     acceleration_scaling_factor: 0.01
     joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
-    target_joints_configurations: [1.0,-0.4046571890460413,-1.1754615942584437,1.6654682159423828,-2.0698588530169886,-1.5612176100360315,0.0]
+    target_joints_configurations:
+      - 0.2758714138302716
+      - 0.5325750647976708
+      - 0.34123212889176563
+      - -2.0733580904563333
+      - -0.31397896861620783
+      - 2.5580216413485024
+      - 1.6229646962230357
 
   move_to_conf_place_approach:
     group_name: "fr3_arm"
@@ -123,13 +138,13 @@ bt_executer:
     acceleration_scaling_factor: 0.01
     joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
     target_joints_configurations: 
-      - -0.40980642100012316
-      - 0.34876069845937385
-      - -0.28420102708886946
-      - -2.231272917890299
-      - 0.1762769992784698
-      - 2.5603757166657815
-      - -0.03981556460702614
+      - -0.4318794167817232
+      - 0.45331508981840357
+      - -0.25384488120718607
+      - -2.175324523934475
+      - 0.21822268619440877
+      - 2.6057842582943405
+      - -0.0635897175420648
 
   move_to_conf_give:
     group_name: "fr3_arm"
