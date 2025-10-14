@@ -4,8 +4,8 @@ bt_executer:
     wait_ms: 100 #ms
 
   open_gripper:
-    position: 0.07
-    max_effort: 0.1 
+    position: 0.039
+    max_effort: 0.0
   
   close_gripper:
     position: 0.0
@@ -47,14 +47,14 @@ bt_executer:
 
   move_to_conf_home:
     group_name: "fr3_arm"
-    fjt_action_name: "/fr3_arm_scaled_controller/follow_joint_trajectory"
+    fjt_action_name: "/fr3_arm_controller/follow_joint_trajectory"
     simulation: False
     speed_scaling_topic: "/speed_ovr"
     scaling: 100
     pipeline_id: "ompl"
     planner_id: "BiTRRT"
-    velocity_scaling_factor: 0.01
-    acceleration_scaling_factor: 0.01
+    velocity_scaling_factor: 0.05
+    acceleration_scaling_factor: 0.05
     joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
     target_joints_configurations: 
     - 0.0
@@ -68,14 +68,14 @@ bt_executer:
 
   move_to_conf_pick_approach:
     group_name: "fr3_arm"
-    fjt_action_name: "/fr3_arm_scaled_controller/follow_joint_trajectory"
+    fjt_action_name: "/fr3_arm_controller/follow_joint_trajectory"
     simulation: False
     speed_scaling_topic: "/speed_ovr"
     scaling: 100
     pipeline_id: "ompl"
     planner_id: "BiTRRT"
-    velocity_scaling_factor: 0.01
-    acceleration_scaling_factor: 0.01
+    velocity_scaling_factor: 0.05
+    acceleration_scaling_factor: 0.05
     joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
     target_joints_configurations: 
       - 0.19197620106038832
@@ -88,14 +88,14 @@ bt_executer:
 
   move_to_conf_pick:
     group_name: "fr3_arm"
-    fjt_action_name: "/fr3_arm_scaled_controller/follow_joint_trajectory"
+    fjt_action_name: "/fr3_arm_controller/follow_joint_trajectory"
     simulation: False
     speed_scaling_topic: "/speed_ovr"
     scaling: 100
     pipeline_id: "ompl"
     planner_id: "BiTRRT"
-    velocity_scaling_factor: 0.01
-    acceleration_scaling_factor: 0.01
+    velocity_scaling_factor: 0.05
+    acceleration_scaling_factor: 0.05
     joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
     target_joints_configurations:
       - 0.2758714138302716
@@ -108,14 +108,14 @@ bt_executer:
 
   move_to_conf_place_approach:
     group_name: "fr3_arm"
-    fjt_action_name: "/fr3_arm_scaled_controller/follow_joint_trajectory"
+    fjt_action_name: "/fr3_arm_controller/follow_joint_trajectory"
     simulation: False
     speed_scaling_topic: "/speed_ovr"
     scaling: 100
     pipeline_id: "ompl"
     planner_id: "BiTRRT"
-    velocity_scaling_factor: 0.01
-    acceleration_scaling_factor: 0.01
+    velocity_scaling_factor: 0.05
+    acceleration_scaling_factor: 0.05
     joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
     target_joints_configurations:
       - -0.3890962297483688
@@ -128,14 +128,14 @@ bt_executer:
 
   move_to_conf_place:
     group_name: "fr3_arm"
-    fjt_action_name: "/fr3_arm_scaled_controller/follow_joint_trajectory"
+    fjt_action_name: "/fr3_arm_controller/follow_joint_trajectory"
     simulation: False
     speed_scaling_topic: "/speed_ovr"
     scaling: 100
     pipeline_id: "ompl"
     planner_id: "BiTRRT"
-    velocity_scaling_factor: 0.01
-    acceleration_scaling_factor: 0.01
+    velocity_scaling_factor: 0.05
+    acceleration_scaling_factor: 0.05
     joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
     target_joints_configurations: 
       - -0.4318794167817232
@@ -148,13 +148,13 @@ bt_executer:
 
   move_to_conf_give:
     group_name: "fr3_arm"
-    fjt_action_name: "/fr3_arm_scaled_controller/follow_joint_trajectory"
+    fjt_action_name: "/fr3_arm_controller/follow_joint_trajectory"
     simulation: False
     speed_scaling_topic: "/speed_ovr"
     scaling: 100
     pipeline_id: "ompl"
     planner_id: "BiTRRT"
-    velocity_scaling_factor: 0.01
-    acceleration_scaling_factor: 0.01
+    velocity_scaling_factor: 0.05
+    acceleration_scaling_factor: 0.05
     joints_names: ["fr3_joint1", "fr3_joint2", "fr3_joint3", "fr3_joint4", "fr3_joint5", "fr3_joint6", "fr3_joint7"]
     target_joints_configurations: [0.5351068777131383,-1.5312471850963396,-1.1439016718693455,1.1703671318470665,-2.0943297204583287,-1.5699958782745058,0.0]

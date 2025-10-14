@@ -8,7 +8,7 @@
                       
            <!-- If you use subtrees -->
             <!-- <SubTree ID="Subtree name"/> -->                            
-            <Robotiq2f85Skill name="close_gripper" action_name= "/fr3_gripper/gripper_cmd" param_ns="close_gripper"/>
+            <Robotiq2f85Skill name="close_gripper" action_name= "/franka_gripper/gripper_action" param_ns="close_gripper"/>
             <MoveitAttachObjectSkill name="attach_bottle" service_name= "/attach_scene_object" param_ns="attach_bottle"/>
 
         </Sequence>
