@@ -87,6 +87,7 @@ sudo apt install python3-vcstool -y
 Import dependencies listed in `deps.repos`:
 ```bash
 vcs import < deps.repos
+vcs custom --git --args submodule update --init --recursive
 ```
 
 ---
