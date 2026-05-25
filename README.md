@@ -125,7 +125,20 @@ source install/setup.bash
 ```
 <!-- You may want to add this line to your `~/.bashrc` to make it permanent. -->
 
-## 9. Run the demo1
+## 9. Check the Behavior Tree paths
+The `bt_topic_trigger` configuration uses absolute paths to find the trees.
+Before running the demo, open these files and edit the `trees_paths` field with the correct path of your workspace:
+```bash
+holden_demo/config/bt_topic_trigger_config.yaml
+holden_demo/config/bt_topic_trigger_fancy_config.yaml
+```
+
+For example, if your workspace is in `~/projects/holden_ws`, the config should point to:
+```bash
+/home/<your_user>/projects/holden_ws/src/holden_demo/trees/test_bt_topic_trigger_fancy
+```
+
+## 10. Run the demo1
 In the first terminal:
 ```bash
 ros2 launch ur_linear_guide ur_on_linear_guide.launch.py 
@@ -140,7 +153,7 @@ Then check if it works with a gesture:
 ros2 topic  pub /gesture_recognition std_msgs/msg/String "data: 'right'" -1
 ```
 
-## 10. Run the demo2
+## 11. Run the demo2
 In the first terminal:
 ```bash
 ros2 launch ur_linear_guide ur_on_linear_guide.launch.py 

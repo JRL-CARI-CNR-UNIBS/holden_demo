@@ -20,12 +20,12 @@ def generate_launch_description():
           "--path-to-file",
           PathJoinSubstitution([
             config_folder,
-            "bt_topic_trigger_config.yaml"  
+            "bt_topic_trigger_fancy_config.yaml"  
           ]),
           "--path-to-file",
           PathJoinSubstitution([
             config_folder,
-            "bt_topic_trigger_skills_config.yaml" 
+            "bt_topic_trigger_skills_fancy_config.yaml" 
           ])
         ],
         shell=False
