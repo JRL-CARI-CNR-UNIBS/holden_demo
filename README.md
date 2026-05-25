@@ -87,6 +87,7 @@ sudo apt install python3-vcstool -y
 Import dependencies listed in `deps.repos`:
 ```bash
 vcs import < deps.repos
+vcs custom --git --args submodule update --init --recursive
 ```
 
 ---
@@ -141,10 +142,12 @@ For example, if your workspace is in `~/projects/holden_ws`, the config should p
 ## 10. Run the demo1
 In the first terminal:
 ```bash
+export CNR_PARAM_ROOT_DIRECTORY=/tmp/cnr_param
 ros2 launch ur_linear_guide ur_on_linear_guide.launch.py 
 ```
 In another one:
 ```bash
+export CNR_PARAM_ROOT_DIRECTORY=/tmp/cnr_param
 ros2 launch holden_demo bt_topic_trigger.launch.py 
 ```
 
@@ -156,6 +159,7 @@ ros2 topic  pub /gesture_recognition std_msgs/msg/String "data: 'right'" -1
 ## 11. Run the demo2
 In the first terminal:
 ```bash
+export CNR_PARAM_ROOT_DIRECTORY=/tmp/cnr_param
 ros2 launch ur_linear_guide ur_on_linear_guide.launch.py 
 ```
 In another one:
@@ -166,6 +170,7 @@ ros2 control switch_controllers --deactivate ur_on_linear_guide_scaled_controlle
 Then:
 ```bash
 cd ~/projects/holden_ws/src/holden_demo/config
+export CNR_PARAM_ROOT_DIRECTORY=/tmp/cnr_param
 ros2 launch string_velocity_position_converter string_velocity_position.launch.py config_file:=string_velocity_position_converter_config.yaml 
 ```
 
